@@ -1,17 +1,17 @@
-import { useState } from "react";
-import "./App.css";
+import { Outlet } from "react-router";
+import { createContext, useState } from "react";
+
+export const CardsContext = createContext();
 
 function App() {
+  // ** Global state ↓
+  const [cardsArray, setCardsArray] = useState([]);
   return (
     <>
 
-      <div>This is a test av Dejan</div>
-
-      
-
-      <div></div>
-      <h1>Hello</h1>
-
+      <CardsContext.Provider value={{ cardsArray, setCardsArray }}>
+        <Outlet />
+      </CardsContext.Provider>
     </>
   );
 }
