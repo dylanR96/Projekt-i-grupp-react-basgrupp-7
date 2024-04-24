@@ -8,6 +8,7 @@ function App() {
   const [cardsArray, setCardsArray] = useState([]);
   return (
     <>
+
       <CardsContext.Provider value={{ cardsArray, setCardsArray }}>
         <Outlet />
       </CardsContext.Provider>
