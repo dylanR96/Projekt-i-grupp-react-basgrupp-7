@@ -1,10 +1,8 @@
-import { useState } from "react";
-import "./App.css";
-
 function App() {
   return (
     <>
-      <div></div>
+      <button>Home</button>
+      <button>Add card</button>{" "}
     </>
   );
 }
