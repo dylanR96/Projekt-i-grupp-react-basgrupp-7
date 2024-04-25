@@ -18,7 +18,7 @@ function Card({ card }) {
       <img
         className="bankVendor"
         alt={card.bankVendor}
-        src={`/public/icons/${card.bankVendor}.png`}
+        src={`/icons/${card.bankVendor}.png`}
       />
 
       <div className="card__number__box">
