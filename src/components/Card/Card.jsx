@@ -1,33 +1,36 @@
 import "./card.css";
 import ChipIcon from "../../assets/ChipIcon.jsx";
 import WaveIcon from "../../assets/WaveIcon.jsx";
+import {
+  Bitcoin,
+  NinjaBank,
+  BlockChain,
+  EvilCorp,
+} from "../Vendors-Icon/Vendors.jsx";
 
-function Card() {
-  const cardNumber = "0000 0000 0000 0000";
-  const cardHolder = "Richie Rich";
-  const date = "24/04";
-  const vendorIcon = <WaveIcon />;
-
+function Card({ formData }) {
   return (
-    <div className="card-container">
-      <div className="card-upper-section">
-        <div className="card-chip-icons">
-          <WaveIcon />
-          <ChipIcon />
+    <div>
+      <div className="card-container">
+        <div className="card-upper-section">
+          <div className="card-chip-icons">
+            <WaveIcon />
+            <ChipIcon />
+          </div>
+          <Bitcoin />
         </div>
-        {vendorIcon}
-      </div>
-      <div className="card-num">
-        <p>{cardNumber}</p>
-      </div>
-      <div className="card-bottom-section">
-        <div className="card-holder">
-          <h4>CARDHOLDER NAME</h4>
-          <p>{cardHolder}</p>
+        <div className="card-num">
+          <p>XXXX XXXX XXXX XXXX</p>
         </div>
-        <div className="card-date">
-          <h4>VALID THRU</h4>
-          <p>{date}</p>
+        <div className="card-bottom-section">
+          <div className="card-holder">
+            <h4>CARDHOLDER NAME</h4>
+            <p>FIRSTNAME LASTNAME</p>
+          </div>
+          <div className="card-date">
+            <h4>VALID THRU</h4>
+            <p>MM/TT</p>
+          </div>
         </div>
       </div>
     </div>

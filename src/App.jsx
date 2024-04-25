@@ -1,8 +1,16 @@
+import { Outlet } from "react-router";
+import { createContext, useState } from "react";
+
+export const CardsContext = createContext();
+
 function App() {
+  // ** Global state ↓
+  const [cardsArray, setCardsArray] = useState([]);
   return (
     <>
-      <button>Home</button>
-      <button>Add card</button>{" "}
+      <CardsContext.Provider value={{ cardsArray, setCardsArray }}>
+        <Outlet />
+      </CardsContext.Provider>
     </>
   );
 }

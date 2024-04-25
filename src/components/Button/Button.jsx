@@ -1,7 +1,7 @@
 import "./button.css";
 
-function Button() {
-  return <div>Button</div>;
+function Button({ onClick, label }) {
+  return <button onClick={onClick}>{label}</button>;
 }
 
 export default Button;
