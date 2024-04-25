@@ -27,9 +27,9 @@ function Cards() {
         return "default-background";
     }
   }
-  // ** Using global statement
+
   const { cardsArray, setCardsArray } = useContext(CardsContext);
-  console.log(cardsArray);
+
   const navigate = useNavigate();
   return (
     <div>

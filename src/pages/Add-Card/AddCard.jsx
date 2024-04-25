@@ -27,8 +27,6 @@ function AddCard() {
   const handleSubmit = () => {
     const newCard = { ...formData };
     setCardsArray([...cardsArray, newCard]);
-    console.log("New Card Information:", newCard);
-    console.log(cardsArray);
     setFormData({
       cardNumber: "",
       cardHolder: "",
@@ -37,7 +35,7 @@ function AddCard() {
       vendor: "",
     });
   };
-  console.log(cardsArray);
+
   return (
     <div>
       <Card formData={cardsArray} />
