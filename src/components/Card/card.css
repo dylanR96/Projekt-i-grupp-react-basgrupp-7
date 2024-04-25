@@ -1,0 +1,94 @@
+.card__container {
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(3 1fr);
+  row-gap: 10px;
+  position: relative;
+  max-width: 382px;
+}
+
+.card__chip__signal_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chip {
+  max-width: 46px;
+  max-height: 38px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0.8px 2px;
+}
+
+.bankVendor {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  width: 51px;
+  height: 54px;
+}
+
+.signal {
+  max-width: 42px;
+  max-height: 42px;
+  margin-bottom: -8px;
+  padding: 0.8px 2px;
+}
+
+.card__number__box {
+  /* width: 100%; */
+  justify-self: center;
+}
+
+.card__number__box__p {
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: 3%;
+}
+
+.card___holder__valid__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__holder__box p,
+.card__valid__box p {
+  font-weight: 400;
+  font-size: 12px;
+  color: #000000cc;
+  overflow: hidden;
+}
+
+.card__holder__box strong,
+.card__valid__box strong {
+  font-size: 18px;
+  line-height: 20px;
+  max-width: 251px;
+  font-weight: 400;
+}
+
+/* Colors */
+.Bitcoin {
+  background-color: #ffae34;
+}
+
+.Block {
+  background-color: #8b58f9;
+}
+
+.Evil {
+  background-color: #f33355;
+}
+
+.Ninja {
+  background-color: #222222;
+}
+
+.lightBg,
+.lightBg p,
+.lightBg strong {
+  color: #fff;
+}

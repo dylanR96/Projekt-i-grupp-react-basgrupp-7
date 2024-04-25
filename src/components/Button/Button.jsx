@@ -1,7 +1,7 @@
 import "./button.css";
 
-function Button() {
-  return <div>Button</div>;
+function Button({ clickHandler, children }) {
+  return <button onClick={clickHandler}>{children}</button>;
 }
 
 export default Button;

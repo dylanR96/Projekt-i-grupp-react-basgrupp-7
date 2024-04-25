@@ -1,11 +1,22 @@
 import { useNavigate } from "react-router";
 import "./addCard.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CardsContext } from "../../App";
+
+// ** Example of the structure of a card
+const card = {
+  firstName: "",
+  lastName: "",
+  cardNumber: "",
+  validMonth: "",
+  validYear: "",
+  bankVendor: "",
+};
 
 function AddCard() {
   const navigate = useNavigate();
   const { cardsArray, setCardsArray } = useContext(CardsContext);
+  const [CARD, SETCARD] = useState(card);
 
   return (
     <div>

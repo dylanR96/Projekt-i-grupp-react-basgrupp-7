@@ -1,0 +1,21 @@
+.cards__h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 35px;
+  color: #222222;
+  padding: 10px 0;
+}
+
+.active__card__p {
+  text-align: center;
+  color: #22222299;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 5px 0;
+}
+
+.e__wallet__container__all__cards__box {
+  max-height: 300px;
+  overflow-y: scroll;
+}
