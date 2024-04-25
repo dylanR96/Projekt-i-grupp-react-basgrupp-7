@@ -7,7 +7,7 @@ function Form({ CARD, SETCARD }) {
     <form className={styles["form__container"]}>
       <div className={styles["form__number__and__name__box"]}>
         <label htmlFor="card-number" className={styles["label"]}>
-          CARD NUMBER
+          CARD NUMBER*
         </label>
         <input
           type="number"
@@ -22,7 +22,7 @@ function Form({ CARD, SETCARD }) {
 
       <div className={styles["form__number__and__name__box"]}>
         <label htmlFor="card-name" className={styles["label"]}>
-          FIRSTNAME LASTNAME
+          FIRSTNAME LASTNAME*
         </label>
         <input
           type="text"
@@ -37,7 +37,7 @@ function Form({ CARD, SETCARD }) {
       <div className={styles["valid__ccv__box"]}>
         <div className={styles["form__number__and__name__box"]}>
           <label htmlFor="valid" className={styles["label"]}>
-            VALID THRU
+            VALID THRU*
           </label>
           <input
             className={styles["input"]}
@@ -52,7 +52,7 @@ function Form({ CARD, SETCARD }) {
 
         <div className={styles["form__number__and__name__box"]}>
           <label htmlFor="valid" className={styles["label"]}>
-            CCV
+            CCV*
           </label>
           <input
             className={styles["input"]}
@@ -68,7 +68,7 @@ function Form({ CARD, SETCARD }) {
 
       <div className={styles["select__vendor__box"]}>
         <label htmlFor="vendor-select" className={styles["label"]}>
-          Choose a Vendor
+          Choose a Vendor*
         </label>
         <select
           className={[
