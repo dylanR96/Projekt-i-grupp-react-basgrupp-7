@@ -2,6 +2,8 @@ import { useNavigate } from "react-router";
 import "./cards.css";
 import { useContext } from "react";
 import { CardsContext } from "../../App";
+import Card from "../../components/Card/Card";
+
 
 function Cards() {
   // ** Using global statement
@@ -11,6 +13,7 @@ function Cards() {
   return (
     <div>
       <h1>Home</h1>
+      <Card />
       <button
         // ** Example of usage ↓
         onClick={() => {
