@@ -1,16 +1,19 @@
 import { useNavigate } from "react-router";
-import "./addCard.css";
+import styles from "./addCard.module.css";
 import { useContext, useState } from "react";
 import { CardsContext } from "../../App";
+import Button from "../../components/Button/Button";
+import Form from "../../components/Form/Form";
+import Card from "../../components/Card/Card";
+import toast from "react-hot-toast";
 
 // ** Example of the structure of a card
 const card = {
-  firstName: "",
-  lastName: "",
+  name: "",
   cardNumber: "",
   validMonth: "",
   validYear: "",
-  bankVendor: "",
+  bankVendor: "Default",
 };
 
 function AddCard() {
@@ -18,11 +21,37 @@ function AddCard() {
   const { cardsArray, setCardsArray } = useContext(CardsContext);
   const [CARD, SETCARD] = useState(card);
 
+  const handleSubmit = () => {
+    for (const [key, value] of Object.entries(CARD)) {
+      if (!value) {
+        return toast.error("Please provide all necessary information.");
+      }
+    }
+
+    toast.success("New card successfully added to your e-wallet.");
+
+    setCardsArray([...cardsArray, CARD]);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 500);
+  };
+
   return (
-    <div>
-      <h1>Add new card</h1>
-      <button onClick={() => navigate("/")}>Home page</button>
-    </div>
+    <section className={styles["add__card__section__container"]}>
+      <div className={styles["add__card__div__box"]}>
+        <h1 className={styles["add__card__h1"]}>Add a new banK card</h1>
+
+        <div>
+          <h2 className={styles["new__card__h2"]}>NEW CARD</h2>
+          <Card card={CARD} />
+        </div>
+        <Form CARD={CARD} SETCARD={SETCARD} />
+        <Button variant="primary" clickHandler={() => handleSubmit()}>
+          add card
+        </Button>
+      </div>
+    </section>
   );
 }
 

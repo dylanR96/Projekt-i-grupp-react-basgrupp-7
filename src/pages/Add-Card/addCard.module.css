@@ -1,0 +1,30 @@
+.add__card__h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 35px;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.add__card__section__container {
+  width: 100dvw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.add__card__div__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new__card__h2 {
+  color: #22222299;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 0;
+}
