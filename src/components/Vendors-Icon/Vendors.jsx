@@ -7,3 +7,4 @@ export function Bitcoin() {
 export function NinjaBank() {
   return <div>NinjaBank</div>;
 }
+

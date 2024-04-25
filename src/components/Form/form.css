@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-big {
+    width: 382px;
+    height: 77px;
+    margin-bottom: 20px;
+
+}
+.input-small {
+    width: 175px;
+    height: 77px;
+    margin-bottom: 20px;
+}
+input, select {
+    border-radius: 8px;
+    border-width: 1px;
+    font-size: 2rem;
+    
+}
+
+.valid, .CCV {
+    display: flex;
+    flex-direction: column;
+}
+.valid {
+    margin-right: 30px;
+}
+.valid-and-CCV {
+    display: flex;
+}
+.add-card-button {
+    width: 382px;
+    height: 77px;
+    margin-bottom: 30px;
+    color: white;
+    background-color: black;
+}
