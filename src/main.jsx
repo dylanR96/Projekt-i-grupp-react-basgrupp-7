@@ -14,11 +14,13 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <CardsPage />,
+        loader: () => (document.title = "E-Wallet || All Card"),
       },
 
       {
         path: "/addCard",
         element: <AddCardPage />,
+        loader: () => (document.title = "E-Wallet || Add New Card"),
       },
     ],
   },
