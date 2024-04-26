@@ -22,13 +22,28 @@ const Card = ({ cardDetails, onSelect }) => {
   };
 
   // JSX to render the card's information
-  return (
+  {/*return (
     <div className={styles.card} onClick={handleClick}>
       <div className={styles.cardInfo}>
         <div className={styles.cardNumber}>{cardNumber}</div>
         <div className={styles.cardholderName}>{cardholderName}</div>
         <div className={styles.validThru}>{validThru}</div>
         <div className={styles.vendor}>{vendor}</div>
+      </div>
+    </div>
+  );*/}
+  return (
+    <div className="card">
+      {vendorLogo && (
+        <div
+          className="vendorLogo"
+          style={{ backgroundImage: `url(${vendorLogo})` }}
+        />
+      )}
+      <div className="cardDetails">
+        <div className="cardNumber">{cardNumber}</div>
+        <div className="cardholderName">{cardholderName}</div>
+        <div className="validThru">{validThru}</div>
       </div>
     </div>
   );
