@@ -42,3 +42,15 @@ input, select {
     color: white;
     background-color: black;
 }
+.bitcoinColor {
+    background-color: Yellow;
+}
+.ninjaBankColor {
+    background-color: blue;
+}
+.blockChainIncColor {
+    background-color: green;
+}
+.evilCorpColor {
+    background-color: red;
+}
