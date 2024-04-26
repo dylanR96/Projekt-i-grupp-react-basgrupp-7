@@ -1,0 +1,33 @@
+
+/* card.css */
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card.active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-info {
+    margin-bottom: 12px;
+  }
+  
+  .card-number,
+  .cardholder-name,
+  .valid-thru {
+    font-size: 1rem;
+  }
+  
+  .card-vendor {
+    font-size: 0.8rem;
+    text-align: right;
+  }
+  
+  
+  
