@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import styles from "./addCard.module.css";
 import { useContext, useState } from "react";
-import { CardsContext } from "../../App";
+import { CardsContext, SelectedCardContext } from "../../App";
 import Button from "../../components/Button/Button";
 import Form from "../../components/Form/Form";
 import Card from "../../components/Card/Card";
@@ -11,14 +11,15 @@ import toast from "react-hot-toast";
 const card = {
   name: "",
   cardNumber: "",
-  validMonth: "",
-  validYear: "",
+  valid: "",
+  ccv: "",
   bankVendor: "Default",
 };
 
 function AddCard() {
   const navigate = useNavigate();
   const { cardsArray, setCardsArray } = useContext(CardsContext);
+  const { setSelectedCard } = useContext(SelectedCardContext);
   const [CARD, SETCARD] = useState(card);
 
   const handleSubmit = () => {
@@ -31,6 +32,8 @@ function AddCard() {
     toast.success("New card successfully added to your e-wallet.");
 
     setCardsArray([...cardsArray, CARD]);
+
+    setSelectedCard(CARD);
 
     setTimeout(() => {
       navigate("/");

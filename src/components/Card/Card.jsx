@@ -41,10 +41,7 @@ function Card({ card }) {
 
         <div className={styles["card__valid__box"]}>
           <p>VALID THRU</p>
-          <strong>
-            {card.validMonth ? card.validMonth : "MM"} /{" "}
-            {card.validYear ? card.validYear : "YY"}
-          </strong>
+          <strong>{card.valid ? card.valid : "MM/YY"}</strong>
         </div>
       </div>
     </article>

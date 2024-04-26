@@ -10,7 +10,7 @@ function Form({ CARD, SETCARD }) {
           CARD NUMBER*
         </label>
         <input
-          type="number"
+          type="text"
           name="card-number"
           id="card-number"
           className={styles["cardNumber__name__input"]}
@@ -29,6 +29,7 @@ function Form({ CARD, SETCARD }) {
           name="card-name"
           id="card-name"
           className={styles["cardNumber__name__input"]}
+          maxLength="28"
           value={CARD.name}
           onChange={(e) => SETCARD({ ...CARD, name: e.target.value })}
         />
@@ -44,9 +45,9 @@ function Form({ CARD, SETCARD }) {
             id="valid"
             name="valid-input"
             type="text"
-            value={CARD.validMonth}
-            maxLength="2"
-            onChange={(e) => SETCARD({ ...CARD, validMonth: e.target.value })}
+            value={CARD.valid}
+            maxLength="5"
+            onChange={(e) => SETCARD({ ...CARD, valid: e.target.value })}
           />
         </div>
 
@@ -58,10 +59,10 @@ function Form({ CARD, SETCARD }) {
             className={styles["input"]}
             id="valid"
             name="valid-input"
-            type="number"
+            type="text"
             maxLength="3"
-            value={CARD.validYear}
-            onChange={(e) => SETCARD({ ...CARD, validYear: e.target.value })}
+            value={CARD.ccv}
+            onChange={(e) => SETCARD({ ...CARD, ccv: e.target.value })}
           />
         </div>
       </div>

@@ -11,24 +11,40 @@ function App() {
     {
       name: "Lucas Da Silva",
       cardNumber: "1234 5678 9101 1123",
-      validMonth: 12,
-      validYear: 24,
+      valid: "12/24",
+      ccv: 24,
       bankVendor: "Bitcoin",
     },
     {
-      name: "Lucas Da Silva",
-      cardNumber: "1234 5678 9101 1123",
-      validMonth: 12,
-      validYear: 24,
+      name: "Dejan Dejan",
+      cardNumber: "1234 5879 9101 1324",
+      valid: "04/25",
+      ccv: 24,
       bankVendor: "Ninja",
     },
 
     {
-      name: "Lucas Da Silva",
-      cardNumber: "1234 5678 9101 1123",
-      validMonth: 12,
-      validYear: 24,
+      name: "Alexander Buckard",
+      cardNumber: "1234 4030 9101 1123",
+      valid: "02/25",
+      ccv: 24,
       bankVendor: "Block",
+    },
+
+    {
+      name: "Dylan Dylan",
+      cardNumber: "1230 5070 9101 1123",
+      valid: "03/25",
+      ccv: 24,
+      bankVendor: "Evil",
+    },
+
+    {
+      name: "Tor Tor",
+      cardNumber: "1230 6070 9101 1123",
+      valid: "04/25",
+      ccv: 24,
+      bankVendor: "Ninja",
     },
   ]);
 

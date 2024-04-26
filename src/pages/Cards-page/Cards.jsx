@@ -16,10 +16,6 @@ function Cards() {
     let hoverTranslateY = -50 + i * 20;
     const doc = document.getElementById(`${i}`);
 
-    // setTimeout(() => {
-    // doc.style.zIndex = 500;
-    // }, 50);
-
     if (isLast) return;
     return (doc.style.transform = `translateY(${hoverTranslateY}px)`);
   };
