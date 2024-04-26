@@ -19,35 +19,38 @@ function AddCard() {
     vendor: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e, maxLength) => {
+    if (e.target.value.length > maxLength) {
+      e.target.value = e.target.value.substring(0, maxLength);
+    }
     const { name, value } = e.target;
+
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = () => {
     const newCard = { ...formData };
-    setCardsArray([...cardsArray, newCard]);
-    setFormData({
-      cardNumber: "",
-      cardHolder: "",
-      validThru: "",
-      ccv: "",
-      vendor: "",
-    });
+    console.log(Object.keys(newCard).length);
+    if (Object.keys(newCard).length < 2) {
+      alert("Please fill in all field!");
+    } else {
+      setCardsArray([...cardsArray, newCard]);
+      setFormData({
+        cardNumber: "",
+        cardHolder: "",
+        validThru: "",
+        ccv: "",
+        vendor: "",
+      });
+      navigate("/");
+    }
   };
 
   return (
     <div>
-      <Card formData={cardsArray} />
-      <h1>Add new card</h1>
+      <Card formData={formData} handleChange={handleChange} />
       <Form formData={formData} handleChange={handleChange} />
-      <Button
-        label={"ADD CARD"}
-        onClick={() => {
-          navigate("/");
-          handleSubmit();
-        }}
-      />
+      <Button label={"ADD CARD"} onClick={handleSubmit} />
     </div>
   );
 }

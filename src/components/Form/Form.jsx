@@ -10,7 +10,7 @@ function Form({ formData, handleChange }) {
             name="cardNumber"
             value={formData.cardNumber}
             type="number"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e, 16)}
           />
         </label>
         <label>
@@ -19,7 +19,7 @@ function Form({ formData, handleChange }) {
             name="cardHolder"
             value={formData.cardHolder}
             type="text"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e, 20)}
           />
         </label>
         <label>
@@ -28,7 +28,7 @@ function Form({ formData, handleChange }) {
             name="validThru"
             value={formData.validThru}
             type="number"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e, 5)}
           />
         </label>
         <label>
@@ -37,8 +37,7 @@ function Form({ formData, handleChange }) {
             name="ccv"
             value={formData.ccv}
             type="tel"
-            onChange={handleChange}
-            maxLength="3"
+            onChange={(e) => handleChange(e, 3)}
           />
         </label>
         <select name="vendor" value={formData.vendor} onChange={handleChange}>
