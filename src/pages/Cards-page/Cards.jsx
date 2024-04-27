@@ -11,7 +11,7 @@ function Cards() {
     <div>
       <h1>Home</h1>
       <div className="cards-container">
-        {cardsArray.map(card => (
+        {/* {cardsArray.map(card => (
           <Card
             key={card.cardNumber}
             cardNumber={card.cardNumber}
@@ -20,7 +20,7 @@ function Cards() {
             ccv={card.ccv}
             vendor={card.vendor}
           />
-        ))}
+        ))} */}
       </div>
       <button onClick={() => navigate("/addCard")}>
         Add new card

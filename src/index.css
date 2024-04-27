@@ -14,3 +14,34 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.card-bitcoin { 
+  width: 382px;
+  height: 241px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: yellow;
+}
+.card-Ninja-Bank {
+  width: 382px;
+  height: 241px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: blue;
+}
+.card-Block-Chain-Inc {
+  width: 382px;
+  height: 241px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: green;
+}
+.card-Evil-Corp {
+  width: 382px;
+  height: 241px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(128, 0, 90);  }   

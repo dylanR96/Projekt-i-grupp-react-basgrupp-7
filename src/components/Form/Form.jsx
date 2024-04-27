@@ -7,22 +7,33 @@ const InfoCard = ({ onCreateCard }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
   const [selectedVendor, setSelectedVendor] = useState('');
-  
+
   const creditCard = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
   
-    const newCard = {
-      cardNumber: e.target.card_number.value,
-      cardholderName: e.target.cardholder_name.value,
-      validThru: e.target.valid_number.value,
-      ccv: e.target.ccv_number.value,
-      vendor: selectedVendor
-    };
-    
-    setCardsArray(prevCards => [...prevCards, newCard]);
-    onCreateCard(newCard);
-    setStateMessage('Credit card added successfully');
+    const cardNumber = e.target.card_number.value;
+    const cardholderName = e.target.cardholder_name.value;
+    const validThru = e.target.valid_number.value;
+  
+    // Kontrollera om alla nödvändiga kortuppgifter finns tillgängliga
+    if (cardNumber && cardholderName && validThru) {
+      const newCard = {
+        cardNumber,
+        cardholderName,
+        validThru,
+        ccv: e.target.ccv_number.value,
+        vendor: selectedVendor
+      };
+  
+      setCardsArray(prevCards => [...prevCards, newCard]);
+      onCreateCard(newCard);
+      setStateMessage('Credit card added successfully');
+    } else {
+      // Visa felmeddelande om någon av kortuppgifterna saknas
+      setStateMessage('Please fill in all required fields');
+    }
+  
     setIsSubmitting(false);
   
     setTimeout(() => {
@@ -31,9 +42,9 @@ const InfoCard = ({ onCreateCard }) => {
   
     e.target.reset();
   };
-  
+
   const handleVendorChange = (e) => { setSelectedVendor(e.target.value); };
-  
+
   const getCardColorClass = () => {
     switch (selectedVendor) {
       case 'Bitcoin':
@@ -51,20 +62,7 @@ const InfoCard = ({ onCreateCard }) => {
 
   return (
     <>
-    
-    {/* <div>                  DEN HÄR GÖR ATT DEN RENDERAS UT DUBBELT AV NÅGON ANLEDNING PÅ ADDCARD SIDAN
-        {cardsArray.map(card => (
-          <Card
-            key={card.cardNumber}
-            cardNumber={card.cardNumber}
-            cardholderName={card.cardholderName}
-            validThru={card.validThru}
-            ccv={card.ccv}
-            vendor={card.vendor}
-          />
-        ))}
-      </div> */}
-    <form onSubmit={creditCard} className="input-fields">
+      <form onSubmit={creditCard} className="input-fields">
       <label>CARD NUMBER</label>
       <input type="tel" name="card_number" className="input-big" maxlength="16" placeholder="1234 1234 1234 1234" />
       <label>CARDHOLDER NAME</label>
@@ -89,13 +87,20 @@ const InfoCard = ({ onCreateCard }) => {
       </select>
       <input type="submit" value="Send" disabled={isSubmitting} />
       {stateMessage && <p>{stateMessage}</p>}
-    </form> 
-    <div className="card-container">
-        <Card className={getCardColorClass()} />
+      </form>
+      <div className="card-container">
+        {/* Kortkomponenten med den senast tillagda kortet */}
+        <div className="card-container">
+          {cardsArray.length > 0 && (
+            <Card
+              card={cardsArray[cardsArray.length - 1]}
+              getCardColorClass={getCardColorClass} // Skicka med getCardColorClass som en prop
+            />
+          )}
+        </div>
       </div>
     </>
   );
 };
 
-// OBS! value på input kanske måste vara send
 export default InfoCard;

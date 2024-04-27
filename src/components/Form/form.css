@@ -42,15 +42,60 @@ input, select {
     color: white;
     background-color: black;
 }
-.bitcoinColor {
-    background-color: Yellow;
+.card-bitcoin { 
+    width: 382px;
+    height: 241px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: yellow;
 }
-.ninjaBankColor {
+.card-ninja-bank {
+    width: 382px;
+    height: 241px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
     background-color: blue;
 }
-.blockChainIncColor {
+.card-block-chain-inc {
+    width: 382px;
+    height: 241px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
     background-color: green;
 }
-.evilCorpColor {
-    background-color: red;
-}
+.card-evil-corp {
+    width: 382px;
+    height: 241px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(128, 0, 90);  }   
+
+    .card-container {
+        width: 382px;
+        height: 241px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 15px;
+      }
+      
+      .bitcoinColor {
+        background-color: yellow;
+      }
+      
+      .ninjaBankColor {
+        background-color: blue;
+      }
+      
+      .blockChainIncColor {
+        background-color: green;
+      }
+      
+      .evilCorpColor {
+        background-color: rgb(128, 0, 90);
+      }
+    
+    
