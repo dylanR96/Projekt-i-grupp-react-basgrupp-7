@@ -1,5 +1,5 @@
 /* src/components/Card/card.css */
-
+/* 
 .card {
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   border-radius: 15px;
@@ -40,4 +40,126 @@
   height: 50px;
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 5;
+} */
+/* src/components/Card/card.module.css */
+
+.card {
+  background: #ffc439; /* Adjust the color to match the provided design */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: black; /* Color adjusted to match the provided design */
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Adjust spacing */
+  width: 350px; /* Adjust width to desired size */
+  height: 220px; /* Adjust height to desired size */
+  font-family: 'Arial', sans-serif; /* Use a font that resembles a credit card */
+}
+
+.chip {
+  width: 60px; /* Adjust size to match design */
+  margin-top: 20px; /* Space from top of card */
+}
+
+.signal {
+  width: 35px; /* Adjust size to match design */
+  margin-top: 20px; /* Space from top of card */
+  margin-left: 10px; /* Space between chip and signal */
+}
+
+.cardNumber {
+  font-size: 2em; /* Larger font-size */
+  letter-spacing: 4px; /* Adjust letter spacing */
+  margin-top: 10px; /* Space from chip */
+}
+
+.cardholderLabel, .validLabel {
+  font-size: 0.8em; /* Smaller font-size for labels */
+  color: #333; /* Darker color for better readability */
+  letter-spacing: 1px; /* Spacing for uppercase letters */
+  text-transform: uppercase; /* Uppercase for labels */
+}
+
+.cardholderName, .validThru {
+  font-size: 1.2em; /* Readable font-size */
+  color: #333; /* Darker color for better readability */
+}
+
+.vendorLogo {
+  position: absolute;
+  top: 20px; /* Adjust to match design */
+  right: 20px; /* Adjust to match design */
+  width: 50px; /* Adjust size to match design */
+  height: 50px; /* Adjust size to match design */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* src/components/Card/card.module.css */
+
+.card {
+  background: #ffc439; /* Assuming a golden color */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: black;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Spacing out elements */
+  width: 350px; /* Adjust to your preference */
+  height: 190px; /* Adjust to your preference */
+  font-family: 'Arial', sans-serif;
+}
+
+.signal {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  width: 30px; /* Adjust to match your design */
+}
+
+.chip {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  left: 60px; /* Adjust so that it's to the right of the signal */
+  width: 50px; /* Adjust to match your design */
+}
+
+.cardNumber {
+  font-size: 2em;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 0 auto; /* Center the card number */
+}
+
+.cardholderInfo {
+  display: flex;
+  justify-content: space-between; /* Align name and validity side by side */
+  align-items: center; /* Align items vertically */
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 20px; /* Maintain consistent padding */
+  right: 20px; /* Maintain consistent padding */
+}
+
+.cardholderLabel, .validLabel {
+  font-size: 0.8em;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.cardholderName, .validThru {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.vendorLogo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px; /* Adjust based on your design */
+  height: 50px; /* Adjust based on your design */
 }
