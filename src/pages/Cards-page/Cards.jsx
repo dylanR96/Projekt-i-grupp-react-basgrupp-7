@@ -2,8 +2,7 @@ import { useNavigate } from "react-router";
 import "./cards.css";
 import { useContext, useState } from "react";
 import { CardsContext } from "../../App";
-import ChipIcon from "../../assets/ChipIcon.jsx";
-import WaveIcon from "../../assets/WaveIcon.jsx";
+import { ChipIcon, WaveIcon } from "../../components/Card/ChipIcons.jsx";
 import {
   Bitcoin,
   NinjaBank,
@@ -13,21 +12,6 @@ import {
 import Button from "../../components/Button/Button.jsx";
 
 function Cards() {
-  function getVendorClassName(vendor) {
-    switch (vendor) {
-      case "bitcoin":
-        return "bitcoin-background";
-      case "ninjaBank":
-        return "ninjabank-background";
-      case "blockChain":
-        return "blockchain-background";
-      case "evilCorp":
-        return "evilcorp-background";
-      default:
-        return "default-background";
-    }
-  }
-
   const { cardsArray, setCardsArray } = useContext(CardsContext);
   const [selectedCard, setSelectedCard] = useState(null);
   const [remainingCards, setRemainingCards] = useState(
@@ -55,11 +39,7 @@ function Cards() {
     <div>
       <div>
         {selectedCard !== null && (
-          <div
-            className={`card-container ${getVendorClassName(
-              selectedCard.vendor
-            )}`}
-          >
+          <div className={`card-container ${selectedCard.vendor}-background`}>
             <div className="card-upper-section">
               <div className="card-chip-icons">
                 <WaveIcon />
@@ -97,7 +77,7 @@ function Cards() {
         {remainingCards.map((card) => (
           <div
             key={card.id}
-            className={`card-container ${getVendorClassName(card.vendor)}`}
+            className={`card-container ${card.vendor}-background`}
             onClick={() => handleClick(card.id)}
           >
             <div className="card-upper-section">
@@ -131,10 +111,9 @@ function Cards() {
             </div>
           </div>
         ))}
+        {remainingCards !== null}
       </div>
-
       <h1>Home</h1>
-
       <Button
         label={"ADD A NEW CARD"}
         onClick={() => {

@@ -1,6 +1,5 @@
 import "./card.css";
-import ChipIcon from "../../assets/ChipIcon.jsx";
-import WaveIcon from "../../assets/WaveIcon.jsx";
+import { ChipIcon, WaveIcon } from "./ChipIcons.jsx";
 import {
   Bitcoin,
   NinjaBank,
@@ -9,24 +8,9 @@ import {
 } from "../Vendors-Icon/Vendors.jsx";
 
 function Card({ formData }) {
-  function getVendorClassName(vendor) {
-    switch (vendor) {
-      case "bitcoin":
-        return "bitcoin-background";
-      case "ninjaBank":
-        return "ninjabank-background";
-      case "blockChain":
-        return "blockchain-background";
-      case "evilCorp":
-        return "evilcorp-background";
-      default:
-        return "default-background";
-    }
-  }
-
   return (
     <div>
-      <div className={`card-container ${getVendorClassName(formData.vendor)}`}>
+      <div className={`card-container ${formData.vendor}-background`}>
         <div className="card-upper-section">
           <div className="card-chip-icons">
             <WaveIcon />
@@ -52,8 +36,8 @@ function Card({ formData }) {
             <p>
               {formData.cardHolder === "" && "FIRSTNAME LASTNAME"}
               {formData.cardHolder
-                ? formData.cardHolder.match(/[a-zA-Z]+/g).join(" ")
-                : " "}
+                ? (formData.cardHolder.match(/[a-zA-Z]+/g) || []).join(" ")
+                : ""}
             </p>
           </div>
           <div className="card-date">

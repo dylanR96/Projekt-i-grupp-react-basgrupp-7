@@ -36,7 +36,7 @@ function Form({ formData, handleChange }) {
           <input
             name="ccv"
             value={formData.ccv}
-            type="tel"
+            type="number"
             onChange={(e) => handleChange(e, 3)}
           />
         </label>
