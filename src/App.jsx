@@ -4,7 +4,6 @@ import { createContext, useState } from "react";
 export const CardsContext = createContext();
 
 function App() {
-  // ** Global state ↓
   const [cardsArray, setCardsArray] = useState([]);
   return (
     <>
