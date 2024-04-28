@@ -1,4 +1,4 @@
-import "./card.css";
+import styles from './card.module.css';
 import cardImage from '../../images/card.png';
 import bitcoinImage from '../../images/Bitcoin.png';
 /* import InfoCard from "./components/Form/Form"; */
@@ -10,13 +10,13 @@ function Card() {
   return (
 /* GLÖM EJ ATT LÄGGA IN ALEX props IGEN. glöm ej att card är inlagt i addCrds också */
   <>
-  <div className="card">
-    <section className='card_img'>
-        <img src={cardImage} alt="" className="payment"/>
-        <img src={bitcoinImage} alt="" className="bitcoin" />
+  <div className={styles.card}>
+    <section className={styles.card_img}>
+        <img src={cardImage} alt="" className={styles.payment}/>
+        <img src={bitcoinImage} alt="" className={styles.bitcoin} />
     </section>
-      <h2 className="card_numbers">XXXX XXXX XXXX XXXX </h2>
-    <section className="card_section_1">
+      <h2 className={styles.card_numbers}>XXXX XXXX XXXX XXXX </h2>
+    <section className={styles.card_section_1}>
       <div>
         <p>CARDHOLDER NAME: </p>
         <p>xxxx xxxx</p>

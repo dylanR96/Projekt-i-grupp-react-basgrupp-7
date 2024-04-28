@@ -7,7 +7,7 @@ form {
     flex-direction: column;
     justify-content: center;
 }
-.input-big {
+.input_big {
     width: 382px;
     height: 77px;
     margin-bottom: 20px;
