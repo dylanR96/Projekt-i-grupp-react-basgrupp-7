@@ -1,3 +1,13 @@
+.card-container {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  max-height: 15rem;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
+}
+
 .bitcoin-background {
   background-color: #ffae34;
 }
@@ -17,16 +27,6 @@
 
 .default-background {
   background-color: #d6d6d6;
-}
-
-.card-container {
-  width: 100%;
-  max-width: 20rem;
-  height: auto;
-  max-height: 15rem;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card-upper-section {

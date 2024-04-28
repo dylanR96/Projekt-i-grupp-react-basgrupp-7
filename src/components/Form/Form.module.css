@@ -3,3 +3,7 @@
   flex-direction: column;
   width: 20rem;
 }
+
+.error-message {
+  color: red;
+}

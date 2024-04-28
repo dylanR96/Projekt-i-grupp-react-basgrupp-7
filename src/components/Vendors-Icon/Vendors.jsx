@@ -1,6 +1,3 @@
-import React from "react";
-import "./vendors.css";
-
 const Bitcoin = () => {
   return (
     <svg

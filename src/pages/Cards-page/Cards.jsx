@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import "./cards.css";
+import styles from "./cards.module.css";
 import { useContext, useState } from "react";
 import { CardsContext } from "../../App";
 import { ChipIcon, WaveIcon } from "../../components/Card/ChipIcons.jsx";
@@ -36,92 +36,106 @@ function Cards() {
 
   const navigate = useNavigate();
   return (
-    <div>
+    <>
       <div>
-        {selectedCard !== null && (
-          <div className={`card-container ${selectedCard.vendor}-background`}>
-            <div className="card-upper-section">
-              <div className="card-chip-icons">
-                <WaveIcon />
-                <ChipIcon />
-              </div>
-              <p>
-                {selectedCard.vendor === "bitcoin" && <Bitcoin />}
-                {selectedCard.vendor === "ninjaBank" && <NinjaBank />}
-                {selectedCard.vendor === "blockChain" && <BlockChain />}
-                {selectedCard.vendor === "evilCorp" && <EvilCorp />}
-              </p>
-              {""}
-            </div>
-            <div className="card-num">
-              <p>{selectedCard.cardNumber}</p>
-              {""}
-            </div>
-            <div className="card-bottom-section">
-              <div className="card-holder">
-                <h4>CARDHOLDER NAME</h4>
-                <p>{selectedCard.cardHolder}</p>
+        <div>
+          {selectedCard !== null && (
+            <div
+              className={`${styles["card-container"]} ${
+                styles[selectedCard.vendor + "-background"]
+              }`}
+            >
+              <div className={styles["card-upper-section"]}>
+                <div className={styles["card-chip-icons"]}>
+                  <WaveIcon />
+                  <ChipIcon />
+                </div>
+                <p>
+                  {selectedCard.vendor === "bitcoin" && <Bitcoin />}
+                  {selectedCard.vendor === "ninjaBank" && <NinjaBank />}
+                  {selectedCard.vendor === "blockChain" && <BlockChain />}
+                  {selectedCard.vendor === "evilCorp" && <EvilCorp />}
+                </p>
                 {""}
               </div>
-              <div className="card-date">
-                <h4>VALID THRU</h4>
-                <p>{selectedCard.validThru}</p>
-                {""}
+              <div className={styles["card-num"]}>
+                <p>
+                  {selectedCard.cardNumber
+                    ? selectedCard.cardNumber.match(/.{1,4}/g).join(" ")
+                    : ""}
+                </p>
+              </div>
+              <div className={styles["card-bottom-section"]}>
+                <div className={styles["card-holder"]}>
+                  <h4>CARDHOLDER NAME</h4>
+                  <p>{selectedCard.cardHolder}</p>
+                  {""}
+                </div>
+                <div className={styles["card-date"]}>
+                  <h4>VALID THRU</h4>
+                  <p>{selectedCard.validThru}</p>
+                  {""}
+                </div>
               </div>
             </div>
-          </div>
-        )}
-        {selectedCard !== null}
+          )}
+          {selectedCard !== null}
+        </div>
+        <div>
+          {remainingCards.map((card) => (
+            <div
+              key={card.id}
+              className={`${styles["card-container"]} ${
+                styles[card.vendor + "-background"]
+              }`}
+              onClick={() => handleClick(card.id)}
+            >
+              <div className={styles["card-upper-section"]}>
+                <div className={styles["card-chip-icons"]}>
+                  <WaveIcon />
+                  <ChipIcon />
+                </div>
+                <p>
+                  {card.vendor === "bitcoin" && <Bitcoin />}
+                  {card.vendor === "ninjaBank" && <NinjaBank />}
+                  {card.vendor === "blockChain" && <BlockChain />}
+                  {card.vendor === "evilCorp" && <EvilCorp />}
+                </p>
+                {""}
+              </div>
+              <div className={styles["card-num"]}>
+                <p>
+                  {card.cardNumber
+                    ? card.cardNumber.match(/.{1,4}/g).join(" ")
+                    : ""}
+                </p>
+              </div>
+              <div className={styles["card-bottom-section"]}>
+                <div className={styles["card-holder"]}>
+                  <h4>CARDHOLDER NAME</h4>
+                  <p>{card.cardHolder}</p>
+                  {""}
+                </div>
+                <div className={styles["card-date"]}>
+                  <h4>VALID THRU</h4>
+                  <p>{card.validThru}</p>
+                  {""}
+                </div>
+              </div>
+            </div>
+          ))}
+          {remainingCards !== null}
+        </div>
+        <h1>Home</h1>
+        <Button
+          label={"ADD A NEW CARD"}
+          onClick={() => {
+            setCardsArray([...cardsArray]);
+            navigate("/addCard");
+          }}
+        />
       </div>
-      <div>
-        {remainingCards.map((card) => (
-          <div
-            key={card.id}
-            className={`card-container ${card.vendor}-background`}
-            onClick={() => handleClick(card.id)}
-          >
-            <div className="card-upper-section">
-              <div className="card-chip-icons">
-                <WaveIcon />
-                <ChipIcon />
-              </div>
-              <p>
-                {card.vendor === "bitcoin" && <Bitcoin />}
-                {card.vendor === "ninjaBank" && <NinjaBank />}
-                {card.vendor === "blockChain" && <BlockChain />}
-                {card.vendor === "evilCorp" && <EvilCorp />}
-              </p>
-              {""}
-            </div>
-            <div className="card-num">
-              <p>{card.cardNumber}</p>
-              {""}
-            </div>
-            <div className="card-bottom-section">
-              <div className="card-holder">
-                <h4>CARDHOLDER NAME</h4>
-                <p>{card.cardHolder}</p>
-                {""}
-              </div>
-              <div className="card-date">
-                <h4>VALID THRU</h4>
-                <p>{card.validThru}</p>
-                {""}
-              </div>
-            </div>
-          </div>
-        ))}
-        {remainingCards !== null}
-      </div>
-      <h1>Home</h1>
-      <Button
-        label={"ADD A NEW CARD"}
-        onClick={() => {
-          setCardsArray([...cardsArray]);
-          navigate("/addCard");
-        }}
-      />
-    </div>
+    </>
   );
 }
 

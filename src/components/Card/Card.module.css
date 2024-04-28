@@ -8,6 +8,27 @@
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
 }
 
+.bitcoin-background {
+  background-color: #ffae34;
+}
+
+.ninjaBank-background {
+  background-color: #222222;
+  color: white;
+}
+
+.blockChain-background {
+  background-color: #8b58f9;
+}
+
+.evilCorp-background {
+  background-color: #f33355;
+}
+
+.default-background {
+  background-color: #d6d6d6;
+}
+
 .card-upper-section {
   display: flex;
   justify-content: space-between;

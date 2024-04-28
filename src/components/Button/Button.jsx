@@ -1,4 +1,4 @@
-import "./button.css";
+import "./button.module.css";
 
 function Button({ onClick, label }) {
   return <button onClick={onClick}>{label}</button>;

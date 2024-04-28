@@ -1,4 +1,4 @@
-import "./card.css";
+import styles from "./card.module.css";
 import { ChipIcon, WaveIcon } from "./ChipIcons.jsx";
 import {
   Bitcoin,
@@ -10,9 +10,13 @@ import {
 function Card({ formData }) {
   return (
     <div>
-      <div className={`card-container ${formData.vendor}-background`}>
-        <div className="card-upper-section">
-          <div className="card-chip-icons">
+      <div
+        className={`${styles["card-container"]} ${
+          styles[formData.vendor + "-background"]
+        }`}
+      >
+        <div className={styles["card-upper-section"]}>
+          <div className={styles["card-chip-icons"]}>
             <WaveIcon />
             <ChipIcon />
           </div>
@@ -22,7 +26,7 @@ function Card({ formData }) {
           {formData.vendor === "blockChain" && <BlockChain />}
           {formData.vendor === "evilCorp" && <EvilCorp />}
         </div>
-        <div className="card-num">
+        <div className={styles["card-num"]}>
           <p>
             {formData.cardNumber === "" && "XXXX XXXX XXXX XXXX"}
             {formData.cardNumber
@@ -30,8 +34,8 @@ function Card({ formData }) {
               : ""}
           </p>
         </div>
-        <div className="card-bottom-section">
-          <div className="card-holder">
+        <div className={styles["card-bottom-section"]}>
+          <div className={styles["card-holder"]}>
             <h4>CARDHOLDER NAME</h4>
             <p>
               {formData.cardHolder === "" && "FIRSTNAME LASTNAME"}
@@ -40,7 +44,7 @@ function Card({ formData }) {
                 : ""}
             </p>
           </div>
-          <div className="card-date">
+          <div className={styles["card-date"]}>
             <h4>VALID THRU</h4>
             <p>
               {formData.validThru === "" && "MM/YY"}

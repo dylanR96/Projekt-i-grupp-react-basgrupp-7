@@ -1,45 +1,49 @@
-import "./form.css";
+import styles from "./form.module.css";
 
-function Form({ formData, handleChange }) {
+function Form({ formData, handleChange, formErrors, errorForm }) {
   return (
     <div>
-      <form className="card-form">
+      <form className={styles["card-form"]}>
         <label>
           CARD CARDNUMBER
           <input
             name="cardNumber"
             value={formData.cardNumber}
             type="number"
-            onChange={(e) => handleChange(e, 16)}
+            onChange={(e) => handleChange(e, 16, 16)}
           />
         </label>
+        <div className={styles["error-message"]}>{formErrors.cardNumber}</div>
         <label>
           CARDHOLDER NAME
           <input
             name="cardHolder"
             value={formData.cardHolder}
             type="text"
-            onChange={(e) => handleChange(e, 20)}
+            onChange={(e) => handleChange(e, 20, 3)}
           />
         </label>
+        <div className={styles["error-message"]}>{formErrors.cardHolder}</div>
         <label>
           VALID THRU
           <input
             name="validThru"
             value={formData.validThru}
             type="number"
-            onChange={(e) => handleChange(e, 5)}
+            onChange={(e) => handleChange(e, 4, 4)}
           />
         </label>
+        <div className={styles["error-message"]}>{formErrors.validThru}</div>
         <label>
-          CCV
+          CVV
           <input
-            name="ccv"
-            value={formData.ccv}
+            name="cvv"
+            value={formData.cvv}
             type="number"
-            onChange={(e) => handleChange(e, 3)}
+            onChange={(e) => handleChange(e, 3, 3)}
           />
         </label>
+        <div className={styles["error-message"]}>{formErrors.cvv}</div>
         <select name="vendor" value={formData.vendor} onChange={handleChange}>
           <option value=""></option>
           <option value="bitcoin">BITCOIN INC</option>
@@ -47,7 +51,9 @@ function Form({ formData, handleChange }) {
           <option value="blockChain">BLOCK CHAIN INC</option>
           <option value="evilCorp">EVIL CORP</option>
         </select>
+        <div className={styles["error-message"]}>{formErrors.vendor}</div>
       </form>
+      <div className={styles["error-message"]}>{errorForm}</div>
     </div>
   );
 }
