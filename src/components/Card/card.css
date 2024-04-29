@@ -1,43 +1,41 @@
-
-  .card {
-    background-color: lightgray;
-    width: 382px;
-    height: 241px;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
+.card {
+  background-color: lightgray;
+  width: 382px;
+  height: 241px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .card_img {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .card_numbers {
-    font-size: 29px;
-    font-family: "PT Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
+  font-size: 29px;
+  font-family: "PT Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .card_section_1 {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0px;
-    font-family: "PT Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  font-family: "PT Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .payment {
-    height: 84px;
-    width: 50px;
+  height: 84px;
+  width: 50px;
 }
 
 .img_bitcoin {
-width: 27px;
-height: 38px;
-
+  width: 27px;
+  height: 38px;
 }
