@@ -1,10 +1,9 @@
-
 .card {
-    width: 382px;
-    height: 241px;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  margin: 10px 0;
+  padding: 10px;
 }
 
 .card_img {
@@ -40,13 +39,21 @@ width: 27px;
 height: 38px;
 
 }
+.evil {
+  width: 27px;
+  height: 38px;
+}
 .card-container {
-    width: 382px;
-    height: 241px;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 382px;
+  height: 241px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+}
   
   .bitcoinColor {
     background-color: yellow;
@@ -63,3 +70,48 @@ height: 38px;
   .evilCorpColor {
     background-color: rgb(128, 0, 90);
   }
+.card-yellow {
+  background-color: #FFAE34;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 150px;
+}
+.card-blue {
+  background-color: blue;
+  color: white;
+  margin: 10px;
+  padding: 10px; 
+  border-radius: 15px;
+  z-index: 1;
+  position: absolute;
+  bottom: 100px; /* Justera toppmarginalen för att synas lite i toppen */
+}
+
+.card-purple {
+  background-color: #8B58F9
+  ;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 2;
+  position: absolute;
+  bottom: 50px; /* Justera toppmarginalen för att synas lite i toppen */
+}
+
+.card-red {
+  background-color: #F33355  ;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 3;
+  position: absolute;
+  bottom: 0; /* Justera toppmarginalen för att ligga på toppen av de andra korten */
+}
+.e-wallet {
+  position: relative; 
+}
+.card:hover {
+  z-index: 4;
+}

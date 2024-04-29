@@ -17,7 +17,6 @@ function AddCard() {
 
   return (
     <div>
-      <Cards card={card}/> 
 
       <InfoCard onCreateCard={handleCreateCard}/> {/* Skicka funktionen för att skapa kort till InfoCard */}
       <button onClick={() => navigate("/")}>Home page</button>
