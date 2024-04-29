@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   align-items: center;
 }
 
@@ -30,10 +31,12 @@
 .e__wallet__container__all__cards__box {
   padding: 20px 0px;
   height: 300px;
+  min-width: 370px;
   position: relative;
   display: grid;
   grid-template-rows: auto;
   overflow-y: auto;
+  overflow-x: hidden;
   border-radius: 8px;
 }
 
@@ -41,15 +44,11 @@
   transition: all 0.3s ease;
   cursor: pointer;
   position: absolute;
-  left: 0;
+  left: 2px;
   top: 8dvh;
   z-index: 1;
   border: 1px solid transparent;
   border-radius: 10px;
-
-  &:hover {
-    border-color: #222222;
-  }
 }
 
 .hidden {

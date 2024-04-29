@@ -5,10 +5,12 @@
   grid-template-rows: repeat(3 1fr);
   row-gap: 10px;
   position: relative;
-  max-width: 340px;
-  min-width: 320px;
+  width: 340px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
 
 .card__chip__signal_box {
