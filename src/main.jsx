@@ -27,7 +27,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router}>
-{/*      <App />  <-- already rendered in "/" path */ }
     </RouterProvider>
   </React.StrictMode>
 );

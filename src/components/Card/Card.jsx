@@ -1,77 +1,6 @@
-{/*import "./card.css";
 
-function Card() {
-  return <div>Card</div>;
-}
-
-export default Card;*/}
-// src/components/Card/Card.jsx
-
-{/*import React from 'react';
-import styles from './card.module.css'; // The CSS module for styling
-
-// The Card component takes in the card details and an onSelect callback as props
-const Card = ({ cardDetails, onSelect }) => {
-  const { cardNumber, cardholderName, validThru, vendor } = cardDetails;
-
-  {/*const vendorLogos = {
-    "Bitcoin Inc": `${import.meta.env.VITE_PUBLIC_URL}/icons/Bitcoin.png`,
-    "Ninja Bank": `${import.meta.env.VITE_PUBLIC_URL}/icons/Ninja.png`,
-    "Block Chain Inc": `${import.meta.env.VITE_PUBLIC_URL}/icons/Block.png`,
-    "Evil Corp": `${import.meta.env.VITE_PUBLIC_URL}/icons/Evil.png`
-  };*/}
-  
-
-
-
-  {/*const vendorLogos = {
-    "Bitcoin Inc": `/icons/Bitcoin.png`,
-    "Ninja Bank": `/icons/Ninja.png`,
-    "Block Chain Inc": `/icons/Block.png`,
-    "Evil Corp": `/icons/Evil.png`
-  };
-  
-  const vendorLogoUrl = vendorLogos[vendor];
-  // Function to handle when a card is clicked
-  const handleClick = () => {
-    if (onSelect) {
-      onSelect(cardDetails);
-    }
-  };
-
-  // JSX to render the card's information
-  {/*return (
-    <div className={styles.card} onClick={handleClick}>
-      <div className={styles.cardInfo}>
-        <div className={styles.cardNumber}>{cardNumber}</div>
-        <div className={styles.cardholderName}>{cardholderName}</div>
-        <div className={styles.validThru}>{validThru}</div>
-        <div className={styles.vendor}>{vendor}</div>
-      </div>
-    </div>
-  );*/}
- {/* return (
-    <div className={styles.card}>
-      {vendor && (
-        <div
-          className={styles.vendorLogo}
-          style={{ backgroundImage: `url(${vendorLogoUrl})` }}
-        ></div>
-      )}
-      <div className={styles.cardDetails}>
-        <div className={styles.cardNumber}>{cardNumber}</div>
-        <div className={styles.cardholderName}>{cardholderName}</div>
-        <div className={styles.validThru}>{validThru}</div>
-      </div>
-    </div>
-  );
-};
-
-export default Card;*/}
-// src/components/Card/Card.jsx
 import React from 'react';
-import styles from './card.module.css'; // Import CSS module
-
+import styles from './card.module.css'; 
 
 const Card = ({ cardDetails, onSelect }) => {
   const { cardNumber, cardholderName, validThru, vendor } = cardDetails;
@@ -83,6 +12,21 @@ const Card = ({ cardDetails, onSelect }) => {
     "Evil Corp": `/icons/Evil.png`
   };
   const vendorLogoUrl = vendorLogos[vendor];
+
+  const vendorColors = {
+    "Bitcoin Inc": "#f7931a", // Example Bitcoin color
+    "Ninja Bank": "#2b3d4f", // Example Ninja Bank color
+    "Block Chain Inc": "#8c8c8c", // Example Block Chain Inc color
+    "Evil Corp": "#232323", // Example Evil Corp color
+  };
+
+  const backgroundColor = vendorColors[vendor] || '#ffffff';
+
+  const cardStyle = {
+    ...styles.card,
+    backgroundColor: backgroundColor, // Set the background color dynamically
+  };
+
 
   const chipImg = '/icons/Chip.png';
   const signalImg = '/icons/Chip-Signal.png';
@@ -96,13 +40,16 @@ const Card = ({ cardDetails, onSelect }) => {
 
 return (
   <div className={styles.card}>
-    {/* Signal should come first */}
+  
     <img src={signalImg} alt="Signal" className={styles.signal} />
+     {vendor && (
+      <img src={vendorLogoUrl} alt="Vendor Logo" className={styles.vendorLogo} />
+    )}
     <img src={chipImg} alt="Chip" className={styles.chip} />
-    
+       
     <div className={styles.cardNumber}>{cardNumber}</div>
     
-    {/* Container for name and validity date */}
+  
     <div className={styles.cardholderInfo}>
       <div>
         <div className={styles.cardholderLabel}>CARDHOLDER NAME</div>
@@ -114,10 +61,7 @@ return (
       </div>
     </div>
     
-    {/* Conditionally render the vendor logo */}
-    {vendor && (
-      <img src={vendorLogoUrl} alt="Vendor Logo" className={styles.vendorLogo} />
-    )}
+
   </div>
 );
 };

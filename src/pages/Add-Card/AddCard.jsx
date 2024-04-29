@@ -1,28 +1,8 @@
-{/* import { useNavigate } from "react-router";
-import "./addCard.css";
-import { useContext } from "react";
-import { CardsContext } from "../../App";
 
-function AddCard() {
-  const navigate = useNavigate();
-  const { cardsArray, setCardsArray } = useContext(CardsContext);
-
-  return (
-    <div>
-      <h1>Add new card</h1>
-      <button onClick={() => navigate("/")}>Home page</button>
-    </div>
-  );
-}
-
-export default AddCard; */ }
-// src/pages/Add-Card/AddCard.jsx
-
-// Necessary imports from React and other modules.
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CardsContext } from '../../App'; // Importing our global state context
-import './addCard.css'; // Importing the CSS for styling this component
+import { CardsContext } from '../../App'; 
+import './addCard.css';
 import Button from '../../components/Button/Button.jsx';
 
 function AddCardPage() {
@@ -106,7 +86,7 @@ function AddCardPage() {
           required
         />
 
-        {/* Here you might want to add a select element for choosing the vendor */}
+       
                 <label htmlFor="vendor">Vendor:</label>
         <select name="vendor" required onChange={handleChange}>
           <option value="">Select a vendor</option>
@@ -116,12 +96,12 @@ function AddCardPage() {
             </option>
           ))}
         </select>
-        {/* Submission button for the form */}
+       
         <button type="submit" className="submit-button">Add Card</button>
-        {/* <Button text="Add New Card" onClick={handleAddCardClick} /> */}
+      
       </form>
 
-      {/* Button to navigate back to the home page without adding a card */}
+     
       <button onClick={() => navigate("/")} className="cancel-button">Cancel</button>
     </div>
   );
