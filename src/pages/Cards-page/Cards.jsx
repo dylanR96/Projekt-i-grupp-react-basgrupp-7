@@ -23,7 +23,7 @@ function Cards() {
   const handleMouseLeave = (e, i) => {
     const doc = document.getElementById(`${i}`);
     let translateY = i * 50;
-    // doc.style.zIndex = 0;
+
     return (doc.style.transform = `translateY(${translateY}px)`);
   };
 
@@ -31,18 +31,22 @@ function Cards() {
     <section className={styles["e__wallet_section"]}>
       <h1 className={styles["cards__h1"]}>E-WALLET</h1>
 
+      {/* ****************** Active card*/}
       <article className={styles["e__wallet__container"]}>
         <div className={styles["e__wallet__container__active__card__box"]}>
           <h2 className={styles["active__card__p"]}>ACTIVE CARD</h2>
           <Card card={selectedCard} />
         </div>
 
+        {/* ****************** All cards array */}
         <div className={styles["e__wallet__container__all__cards__box"]}>
           {cardsArray.map((card, i) => {
             let translateY = i * 40;
             let cardStyle = {
               zIndex: i,
               transform: `translateY(${translateY}px)`,
+              display:
+                selectedCard.cardNumber === card.cardNumber ? "none" : "block",
             };
 
             return (
@@ -50,7 +54,9 @@ function Cards() {
                 id={`${i}`}
                 className={styles["card__div"]}
                 key={i}
-                onClick={() => setSelectedCard(card)}
+                onClick={() => {
+                  setSelectedCard(card);
+                }}
                 onMouseEnter={(e) =>
                   handleHover(e, i, i === cardsArray.length - 1)
                 }

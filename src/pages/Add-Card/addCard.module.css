@@ -28,3 +28,22 @@
   text-align: center;
   padding: 8px 0;
 }
+
+.homeBtn {
+  background-color: #000;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  top: 10dvh;
+  left: 5dvw;
+}
+
+.cardsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

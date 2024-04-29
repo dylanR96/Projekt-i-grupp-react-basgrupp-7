@@ -50,9 +50,15 @@ function AddCard() {
           <Card card={CARD} />
         </div>
         <Form CARD={CARD} SETCARD={SETCARD} />
-        <Button variant="primary" clickHandler={() => handleSubmit()}>
-          add card
-        </Button>
+        <div className={styles.cardsDiv}>
+          <Button variant="primary" clickHandler={() => handleSubmit()}>
+            add card
+          </Button>
+
+          <Button variant="primary" clickHandler={() => navigate("/")}>
+            Cancel
+          </Button>
+        </div>
       </div>
     </section>
   );
