@@ -19,12 +19,10 @@ const Card = ({ cardDetails, onSelect }) => {
     "Block Chain Inc": "#8c8c8c", // Example Block Chain Inc color
     "Evil Corp": "#232323", // Example Evil Corp color
   };
-
   const backgroundColor = vendorColors[vendor] || '#ffffff';
 
   const cardStyle = {
-    ...styles.card,
-    backgroundColor: backgroundColor, // Set the background color dynamically
+    backgroundColor: backgroundColor,
   };
 
 
@@ -39,17 +37,18 @@ const Card = ({ cardDetails, onSelect }) => {
 };
 
 return (
-  <div className={styles.card}>
+  <div className={styles.card} style={cardStyle} onClick={handleClick}>
   
     <img src={signalImg} alt="Signal" className={styles.signal} />
+
      {vendor && (
       <img src={vendorLogoUrl} alt="Vendor Logo" className={styles.vendorLogo} />
     )}
+
     <img src={chipImg} alt="Chip" className={styles.chip} />
        
     <div className={styles.cardNumber}>{cardNumber}</div>
     
-  
     <div className={styles.cardholderInfo}>
       <div>
         <div className={styles.cardholderLabel}>CARDHOLDER NAME</div>
@@ -60,8 +59,6 @@ return (
         <div className={styles.validThru}>{validThru}</div>
       </div>
     </div>
-    
-
   </div>
 );
 };

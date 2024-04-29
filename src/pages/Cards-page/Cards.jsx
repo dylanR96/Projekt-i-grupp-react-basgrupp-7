@@ -7,22 +7,28 @@ import Card from '../../components/Card/Card';
 
 function Cards() {
   // ** Using global statement
-  const { cardsArray, setCardsArray } = useContext(CardsContext);
+  const { cardsArray, setCardsArray, activeCard, setActiveCard } = useContext(CardsContext);
 
   const navigate = useNavigate();
+
+  const handleCardSelect = (selectedCard) => {
+    setActiveCard(selectedCard);
+  };
+
   return (
     <div className="cards-container">
       <h1>Your Cards</h1>
-      {/* Iterate over the cardsArray and render a Card for each object */}
-      {cardsArray.map((card, index) => (
-     
-        <Card key={index} cardDetails={card} />
+      {/* Optionally render the active card at the top */}
+      {activeCard && (
+        <Card key={activeCard.cardNumber} cardDetails={activeCard} onSelect={() => setActiveCard(null)} />
+      )}
+      {/* Iterate over the cardsArray and render a Card for each object, excluding the active card */}
+      {cardsArray.filter(card => !activeCard || card.cardNumber !== activeCard.cardNumber).map((card, index) => (
+        <Card key={index} cardDetails={card} onSelect={() => handleCardSelect(card)} />
       ))}
-      <Button text="Add New Card" onClick={() => {
-          navigate("/addCard");
-        }} />
+      <Button text="Add New Card" onClick={() => navigate("/addCard")} />
     </div>
   );
 }
-  
+
 export default Cards;
