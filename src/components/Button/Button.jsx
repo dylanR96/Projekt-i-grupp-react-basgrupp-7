@@ -1,7 +1,11 @@
-import "./button.css";
+import styles from "./button.module.css";
 
-function Button() {
-  return <div>Button</div>;
+function Button({ clickHandler, children, variant }) {
+  return (
+    <button className={styles[variant]} onClick={clickHandler}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;

@@ -1,0 +1,69 @@
+.form__container {
+  width: 100%;
+  max-height: 50dvh;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+}
+
+.form__number__and__name__box,
+.select__vendor__box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form__number__and__name__box input,
+.select__vendor__box input {
+  max-width: 382px;
+  padding: 8px 5px;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.label {
+  color: #000000cc;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.valid__ccv__box {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.valid__ccv__box .form__number__and__name__box .input {
+  max-width: 100px;
+}
+
+.select__node {
+  padding: 8px 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Colors */
+.Bitcoin {
+  background-color: #ffae34;
+}
+
+.Block {
+  background-color: #8b58f9;
+}
+
+.Evil {
+  background-color: #f33355;
+}
+
+.Ninja {
+  background-color: #222222;
+  color: #fff;
+}
+
+.Default {
+  background-color: #d0d0d0;
+}

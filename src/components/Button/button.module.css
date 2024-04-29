@@ -1,0 +1,40 @@
+.secondary {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24.64px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 382px;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.primary {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24.64px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 382px;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}

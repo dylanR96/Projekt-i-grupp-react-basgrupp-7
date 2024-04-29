@@ -1,29 +1,79 @@
 import { useNavigate } from "react-router";
-import "./cards.css";
+import styles from "./cards.module.css";
 import { useContext } from "react";
-import { CardsContext } from "../../App";
+import { CardsContext, SelectedCardContext } from "../../App";
+import Button from "../../components/Button/Button";
 import Card from "../../components/Card/Card";
-
 
 function Cards() {
   // ** Using global statement
-  const { cardsArray, setCardsArray } = useContext(CardsContext);
+  const { cardsArray } = useContext(CardsContext);
+  const { selectedCard, setSelectedCard } = useContext(SelectedCardContext);
 
   const navigate = useNavigate();
+
+  const handleHover = (e, i, isLast) => {
+    let hoverTranslateY = -50 + i * 20;
+    const doc = document.getElementById(`${i}`);
+
+    if (isLast) return;
+    return (doc.style.transform = `translateY(${hoverTranslateY}px)`);
+  };
+
+  const handleMouseLeave = (e, i) => {
+    const doc = document.getElementById(`${i}`);
+    let translateY = i * 50;
+
+    return (doc.style.transform = `translateY(${translateY}px)`);
+  };
+
   return (
-    <div>
-      <h1>Home</h1>
-      <Card />
-      <button
-        // ** Example of usage ↓
-        onClick={() => {
-          setCardsArray([...cardsArray, 2]);
-          navigate("/addCard");
-        }}
-      >
-        Add new card
-      </button>
-    </div>
+    <section className={styles["e__wallet_section"]}>
+      <h1 className={styles["cards__h1"]}>E-WALLET</h1>
+
+      {/* ****************** Active card*/}
+      <article className={styles["e__wallet__container"]}>
+        <div className={styles["e__wallet__container__active__card__box"]}>
+          <h2 className={styles["active__card__p"]}>ACTIVE CARD</h2>
+          <Card card={selectedCard} />
+        </div>
+
+        {/* ****************** All cards array */}
+        <div className={styles["e__wallet__container__all__cards__box"]}>
+          {cardsArray.map((card, i) => {
+            let translateY = i * 40;
+            let cardStyle = {
+              zIndex: i,
+              transform: `translateY(${translateY}px)`,
+              display:
+                selectedCard.cardNumber === card.cardNumber ? "none" : "block",
+            };
+
+            return (
+              <div
+                id={`${i}`}
+                className={styles["card__div"]}
+                key={i}
+                onClick={() => {
+                  setSelectedCard(card);
+                }}
+                onMouseEnter={(e) =>
+                  handleHover(e, i, i === cardsArray.length - 1)
+                }
+                onMouseLeave={(e) => handleMouseLeave(e, i)}
+                style={cardStyle}
+              >
+                <Card card={card} />
+              </div>
+            );
+          })}
+        </div>
+      </article>
+
+      <Button variant="secondary" clickHandler={() => navigate("/addCard")}>
+        Add New Card
+      </Button>
+    </section>
   );
 }
 

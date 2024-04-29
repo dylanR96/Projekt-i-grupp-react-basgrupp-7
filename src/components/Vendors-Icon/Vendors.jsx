@@ -1,4 +1,4 @@
-import "./vendors.css";
+import styles from "./vendors.module.css";
 
 export function Bitcoin() {
   return <div>Bitcoin</div>;
