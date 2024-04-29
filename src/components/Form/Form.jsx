@@ -1,4 +1,4 @@
-import "./form.css";
+import "./form.module.css";
 import React from 'react';
 
 const CardForm = ({ cardDetails, handleChange, handleSubmit, vendors }) => {
@@ -44,6 +44,7 @@ const CardForm = ({ cardDetails, handleChange, handleSubmit, vendors }) => {
         ))}
       </select>
       <button type="submit" className="submit-button">Add Card</button>
+      
     </form>
   );
 };
